@@ -1,0 +1,32 @@
+{
+  "name": "vinsol-assignment",
+  "version": "1.0.0",
+  "description": "Task Dependency Manager",
+  "main": "index.html",
+  "scripts": {
+    "test": "test",
+    "start": "live-server",
+    "watch": "nodemon --watch . --ext html,css,js --exec \"npm start\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/paras-negi/vinsol-assignment.git"
+  },
+  "keywords": [
+    "task",
+    "manager",
+    "dependency",
+    "manager"
+  ],
+  "author": "Paras Negi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/paras-negi/vinsol-assignment/issues"
+  },
+  "homepage": "https://github.com/paras-negi/vinsol-assignment#readme",
+  "devDependencies": {
+    "http-server": "^14.1.1",
+    "live-server": "^1.2.2",
+    "nodemon": "^3.1.7"
+  }
+}

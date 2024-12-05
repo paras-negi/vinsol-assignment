@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Task Dependency Manager</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1 class="page-title">Task Dependency Manager</h1>
+
+      <div id="taskContainer" class="task-container">
+        <form id="taskForm" class="task-form" method="post">
+          <div class="input-group">
+            <div class="input-field">
+              <label for="taskInput">Add a Task</label>
+              <input
+                type="text"
+                id="taskInput"
+                name="taskInput"
+                placeholder="Enter a task"
+                required
+              />
+            </div>
+
+            <div id="taskDependencyContainer" class="input-field">
+              <label for="taskDependency">Add Dependencies</label>
+              <div class="custom-dropdown">
+                <div class="dropdown-header" id="dependencyDropdown">
+                  <input
+                    type="text"
+                    id="selectedDependencies"
+                    placeholder="Select dependencies"
+                    readonly
+                  />
+                  <span class="dropdown-arrow">▼</span>
+                </div>
+
+                <div class="dropdown-content hidden" id="dependencyList"></div>
+              </div>
+            </div>
+
+            <div id="taskPriorityContainer" class="input-field">
+              <label for="taskPriority">Select priority</label>
+
+              <select id="taskPriority" name="taskPriority" required>
+                <option value="">Select task priority</option>
+                <option value="low">Low</option>
+                <option value="medium">Medium</option>
+                <option value="high">High</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="button-container">
+            <button type="submit" id="saveTask" class="save-btn">
+              Save Task
+            </button>
+          </div>
+
+          <div id="batchImportContainer" class="batch-import-container">
+            <h3 class="batch-import-title">Batch Import</h3>
+            <div class="batch-import-content">
+              <textarea
+                id="batchImport"
+                placeholder='Batch Import JSON: [{"name": "TaskA", "dependencies": [], "priority": "high"}]'
+                rows="10"
+                cols="50"
+              ></textarea>
+              <button
+                type="button"
+                id="batchImportBtn"
+                class="batch-import-btn"
+              >
+                Import Tasks
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <div id="taskListContainer" class="task-list-container">
+      <h2 class="section-title">Tasks</h2>
+      <div id="taskList" class="task-list">
+        <ul id="taskListItems" class="task-list-items">
+          <!-- Example of a task item structure -->
+        </ul>
+      </div>
+    </div>
+
+      <div class="graph-container" id="graphContainer">
+        <h2 class="section-title">Graph</h2>
+        <div class="graph-content">
+        <canvas id="graphCanvas" width="800" height="600"></canvas>
+        </div>
+
+      </div>
+
+      <div class="execution-flow-container" id="executionFlowContainer">
+        <h2 class="section-title">Execution Flow</h2>
+        <div id="executionFlow" class="execution-flow"></div>
+      </div>
+    </div>
+
+    <div id="toastContainer" class="toast-container"></div>
+    <script src="script.js" type="module"></script>
+  </body>
+</html>
